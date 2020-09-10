@@ -1,4 +1,4 @@
-package rtu_IT_IKBO_06_19_Vizer.Lab4;
+package Lab4;
 
 public interface Selectable {
 

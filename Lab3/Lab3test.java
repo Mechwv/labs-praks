@@ -1,4 +1,4 @@
-package rtu_IT_IKBO_06_19_Vizer.Lab3;
+package Lab3;
 
 public class Lab3test {
     public static void main(String[] args) {

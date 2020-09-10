@@ -1,4 +1,4 @@
-package rtu_IT_IKBO_06_19_Vizer.Lab5;
+package Lab5;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

@@ -1,4 +1,4 @@
-package rtu_IT_IKBO_06_19_Vizer.Lab3;
+package Lab3;
 
 class Warriors extends Troop {
 

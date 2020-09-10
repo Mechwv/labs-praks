@@ -1,4 +1,4 @@
-package rtu_IT_IKBO_06_19_Vizer.praktika.Prak3;
+package praktika.Prak3;
 
 public class Circle extends Shape {
 
