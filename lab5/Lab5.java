@@ -1,4 +1,4 @@
-package lab5;
+package rtu.IT.IKBO_06_19.Vizer.lab5;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -18,7 +18,7 @@ public class Lab5 extends JFrame {
         //panel.setSize(500,640);
         panel.setBackground(Color.CYAN);
         try {
-            image = ImageIO.read(new File("lab5/Octocat.png"));
+            image = ImageIO.read(Lab5.class.getResourceAsStream("Octocat.png"));
         } catch (IOException ex) {
             System.err.println("Oh noes, gimme a pic");
         }
