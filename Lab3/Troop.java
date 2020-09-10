@@ -1,4 +1,4 @@
-package rtu.IT.IKBO_06_19.Vizer.Lab3;
+package rtu_IT_IKBO_06_19_Vizer.Lab3;
 
 public abstract class Troop {
     private String weapon;

@@ -1,4 +1,4 @@
-package rtu.IT.IKBO_06_19.Vizer.praktika.Prak3;
+package  rtu_IT_IKBO_06_19_Vizer.praktika.Prak3;
 
 public abstract class Shape {
     protected String color;
