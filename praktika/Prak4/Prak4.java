@@ -1,4 +1,4 @@
-package praktika.Prak4;
+package rtu.IT.IKBO_06_19.Vizer.praktika.Prak4;
 
 import javax.swing.*;
 import java.awt.*;
