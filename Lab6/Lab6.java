@@ -4,8 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class Lab6 extends JFrame {
+public class Lab6 extends JFrame implements MouseListener {
     //adding best looking text 4 area (lul)
     JButton north = new JButton("NORTH");
     JButton south = new JButton("SOUTH");
@@ -30,44 +31,41 @@ public class Lab6 extends JFrame {
         east.setEnabled(false);
         center.setEnabled(false);
         //listeners
-        west.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
-                JOptionPane.showMessageDialog(null, "Добро пожаловать в Джидда");
-            }
-        });
-        south.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
-                JOptionPane.showMessageDialog(null, "Добро пожаловать в Абха");
-            }
-        });
-        north.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
-                JOptionPane.showMessageDialog(null, "Добро пожаловать в");
-            }
-        });
-        east.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
-                JOptionPane.showMessageDialog(null, "Добро пожаловать в Дахране");
-            }
-        });
-        center.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                super.mouseEntered(e);
-                JOptionPane.showMessageDialog(null, "Добро пожаловать в ");
-            }
-        });
+        west.addMouseListener(this);
+        south.addMouseListener(this);
+        north.addMouseListener(this);
+        east.addMouseListener(this);
+        center.addMouseListener(this);
+
         setVisible(true);
     }
     public static void main(String[] args) {
         Lab6 l = new Lab6();
     }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {}
+    @Override
+    public void mousePressed(MouseEvent e) {}
+    @Override
+    public void mouseReleased(MouseEvent e) {}
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        String response = "";
+        Object source = e.getSource();
+        if (north.equals(source)) {
+            response = "Добро пожаловать в";
+        } else if (center.equals(source)) {
+            response = "Добро пожаловать в";
+        } else if (south.equals(source)) {
+            response = "Добро пожаловать в Абха";
+        } else if (west.equals(source)) {
+            response = "Добро пожаловать в Джидда";
+        } else if (east.equals(source)) {
+            response = "Добро пожаловать в Дахране";
+        }
+        JOptionPane.showMessageDialog(null, response);
+    }
+    @Override
+    public void mouseExited(MouseEvent e) {}
 }
