@@ -17,9 +17,9 @@ public class Game {
         return turn + 1;
     }
 
-    public String simulate(Player player1, Player player2) {
+    public String simulate(Player player1, Player player2, int turns) {
         int firstCard, secondCard;
-        for (int i = 0; i < 106; i++) {
+        for (int i = turns; i < 106; i++) {
             firstCard = player1.get_card();
             secondCard = player2.get_card();
             if ((secondCard == 9 && firstCard == 0) || ((firstCard > secondCard) && !(secondCard == 0 && firstCard == 9))) {

@@ -7,7 +7,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.Vector;
 
 public class Prak7 extends JFrame {
     private Player player1 = new Player();
@@ -36,7 +35,7 @@ public class Prak7 extends JFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                endgame.setText(game.simulate(player1,player2));
+                endgame.setText(game.simulate(player1,player2, turns));
             }
         });
 
@@ -80,7 +79,7 @@ public class Prak7 extends JFrame {
     }
 
     public Prak7() {
-        super("Card Game");
+//        super("Card Game");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         String[] ids = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "rubashka_3", "rubashka_3_rev", "space" };
         images = load_pics(ids);
@@ -120,5 +119,6 @@ public class Prak7 extends JFrame {
 
     public static void main(String[] args) throws IOException {
         Prak7 prak = new Prak7();
+        //9 8 7 6 5 0 1 2 3 4
     }
 }
