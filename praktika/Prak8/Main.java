@@ -17,9 +17,11 @@ public class Main {
         System.out.println(unfairWaitList.toString());
 
         unfairWaitList.moveToBack(4);
+        System.out.println("4-ку в конец");
         System.out.println(unfairWaitList.toString());
 
         unfairWaitList.remove(10);
+        System.out.println("10-ку удаляем");
         System.out.println(unfairWaitList.toString());
     }
 }

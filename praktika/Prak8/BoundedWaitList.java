@@ -4,7 +4,7 @@ package praktika.Prak8;
  * Список ожидания с ограниченной емкостью
  */
 public class BoundedWaitList<E> extends WaitList<E>{
-    private int capacity;
+    private final int capacity;
 
     public BoundedWaitList(int capacity) {
         this.capacity = capacity;

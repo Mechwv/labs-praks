@@ -11,7 +11,8 @@ public class UnfairWaitList<E> extends WaitList<E>{
      * Удаление @param element
      */
     public void remove(E element) {
-        content.remove(element);
+        if (content.peek() != element)
+            content.remove(element);
     }
 
     /**

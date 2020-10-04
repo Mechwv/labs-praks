@@ -16,11 +16,15 @@ public class Player {
     }
 
     public int get_card(){
-        return a.poll();
+        if (a.peek() != null)
+            return a.poll();
+        return -1;
     }
 
     public int peek_card(){
-        return a.peek();
+        if (a.peek() != null)
+            return a.peek();
+        return -1;
     }
 
     public boolean isEmpty(){

@@ -1,17 +1,17 @@
 package praktika.Prak6;
 
 public class SortingStudentsByGPA {
-    public static void qSort(Student[] list, int a, int b){
+    public static void qSort(Comparable[] list, int a, int b){
         if (a < b) {
             int i = a, j = b;
-            Student x = list[(i + j) / 2];
+            Comparable x = list[(i + j) / 2];
             do {
                 while (list[i].compareTo(x) < 0)
                     i++;
                 while (x.compareTo(list[j]) < 0)
                     j--;
                 if ( i <= j) {
-                    Student tmp = list[i];
+                    Comparable tmp = list[i];
                     list[i] = list[j];
                     list[j] = tmp;
                     i++;

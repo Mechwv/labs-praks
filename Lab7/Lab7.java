@@ -39,8 +39,9 @@ public class Lab7 {
         list.add(3,'3');
         print("add to index");
 
-        Character a = '3'; // char a = '3' - ошибка
-        list.remove(a); // list.remove('3'); - ошибка
+//        Character a = '3';
+        char a = '3';
+        list.remove( a); // list.remove('3'); - ошибка
         print("remove object by it`s value");
     }
 

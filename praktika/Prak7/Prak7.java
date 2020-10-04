@@ -16,12 +16,13 @@ public class Prak7 extends JFrame {
     private static JButton simulate;
     private static Game game = new Game();
     private int turns = 0;
+    private boolean clicked = false;
 
     private String check_game(){
         if (player1.isEmpty()) {
-            return ("Первый игрок победил. Ходы: " + (turns+1));
+            return ("Второй игрок победил. Ходы: " + (turns));
         } else if (player2.isEmpty()) {
-            return ("Второй игрок победил. Ходы: " + (turns+1));
+            return ("Первый игрок победил. Ходы: " + (turns));
         } else if (turns == 106)
             return "Ботва!";
         return "";
@@ -34,8 +35,12 @@ public class Prak7 extends JFrame {
         simulate.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                super.mousePressed(e);
-                endgame.setText(game.simulate(player1,player2, turns));
+                if (!clicked) {
+                    super.mousePressed(e);
+                    if (endgame.getText().equals(""))
+                        endgame.setText(game.simulate(player1, player2, turns));
+                    clicked = true;
+                }
             }
         });
 
@@ -49,11 +54,15 @@ public class Prak7 extends JFrame {
         cards_2.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                super.mousePressed(e);
-                space_1.setIcon(images[player1.peek_card()]);
-                space_2.setIcon(images[player2.peek_card()]);
-                turns = game.upd_turn(player1,player2,turns);
-                endgame.setText(check_game());
+                if (!clicked) {
+                    super.mousePressed(e);
+                    endgame.setText(check_game());
+                    if ((player1.peek_card() != -1) && (player2.peek_card() != -1)) {
+                        space_1.setIcon(images[player1.peek_card()]);
+                        space_2.setIcon(images[player2.peek_card()]);
+                        turns = game.upd_turn(player1, player2, turns);
+                    }
+                }
             }
         });
 
@@ -65,7 +74,7 @@ public class Prak7 extends JFrame {
         space_2.setBounds(560,200,images[0].getIconWidth(),images[0].getIconHeight());
 
         endgame = new JLabel();
-        endgame.setBounds(100,500,800,50);
+        endgame.setBounds(20,500,900,40);
         Font labelFont = endgame.getFont();
         String labelText = endgame.getText();
 
@@ -120,5 +129,6 @@ public class Prak7 extends JFrame {
     public static void main(String[] args) throws IOException {
         Prak7 prak = new Prak7();
         //9 8 7 6 5 0 1 2 3 4
+        //1 3 5 7 9 2 4 6 8 0
     }
 }

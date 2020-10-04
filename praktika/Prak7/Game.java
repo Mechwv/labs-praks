@@ -30,9 +30,9 @@ public class Game {
                 player2.put_card(secondCard);
             }
             if (player1.isEmpty()) {
-                return ("Первый игрок победил. Ходы: " + (i + 1));
+                return ("Второй игрок победил. Ходы: " + (i+1));
             } else if (player2.isEmpty()) {
-                return ("Второй игрок победил. Ходы: " + (i + 1));
+                return ("Первый игрок победил. Ходы: " + (i+1));
             }
         }
         return "Ботва!";

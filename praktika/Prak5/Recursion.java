@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Recursion {
     public static Scanner scanner = new Scanner(System.in);
-    // summa cifr chisla
+    //1 summa cifr chisla
     public static int task_5(long n, int cnt){
         cnt += n % 10;
         n /= 10;
@@ -33,9 +33,6 @@ public class Recursion {
         }
         return task_16(cnt,max);
     }
-
-
-
 
     public static void main(String[] args) {
         System.out.print(task_5(1010101,0) + "\n");
