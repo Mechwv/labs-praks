@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ExceptionTest {
     public static void getKey() {
         Scanner myScanner = new Scanner( System.in );
+        System.out.println("Enter key: ");
         String key = myScanner.nextLine();
         try {
             printDetails( key );
@@ -48,10 +49,8 @@ public class ExceptionTest {
             }
             getKey();
     }
-
-
-
     public static void main(String[] args) {
+//       Qwerty 0 1.2 1
         exceptionDemo();
     }
 }
