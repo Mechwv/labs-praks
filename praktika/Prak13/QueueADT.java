@@ -24,6 +24,7 @@ public class QueueADT <T> {
     private void checkUpdSize() {
         if (nElem == maxSize) {
             queue = Arrays.copyOf(queue, 2 * maxSize);
+            maxSize*=2;
         }
     }
 

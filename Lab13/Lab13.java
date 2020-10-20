@@ -11,7 +11,7 @@ public class Lab13 {
         String regex = "((?=^.{8,}$)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])([^_]*))";
         Pattern money = Pattern.compile(regex);
         Matcher matcher = money.matcher(input);
-        while (matcher.find()) {
+        if (matcher.find()) {
             System.out.print("OK");
         }
 

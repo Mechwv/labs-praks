@@ -3,6 +3,7 @@ package Lab16;
 public class TableOrder implements Order{
     private int size;
     private MenuItem[] items;
+    private Customer customer;
 
     @Override
     public boolean add(MenuItem item) {
