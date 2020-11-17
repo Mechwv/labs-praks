@@ -1,6 +1,6 @@
 package Lab16;
 
-public class MenuItem {
+public class MenuItem implements Comparable<MenuItem>{
     private int cost;
     private String name;
     private String description;
@@ -21,5 +21,9 @@ public class MenuItem {
 
     public String getDescription() {
         return description;
+    }
+
+    public int compareTo(MenuItem o) {
+        return CharSequence.compare(this.name,o.name);
     }
 }

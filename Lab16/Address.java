@@ -41,4 +41,23 @@ public class Address {
     public int getApartmentNumber() {
         return apartmentNumber;
     }
+
+    @Override
+    public String toString() {
+        return cityName + ", " + zipCode + ", " + streetName + ", " + buildingNumber + ", " + buildingLetter + ", " + apartmentNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Address)) return false;
+
+        Address address = (Address) o;
+
+        if (zipCode != address.zipCode) return false;
+        if (buildingLetter != address.buildingLetter) return false;
+        if (apartmentNumber != address.apartmentNumber) return false;
+        if (cityName != null ? !cityName.equals(address.cityName) : address.cityName != null) return false;
+        return streetName != null ? streetName.equals(address.streetName) : address.streetName == null;
+    }
 }

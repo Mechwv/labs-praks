@@ -30,4 +30,6 @@ public class Customer {
     public Address getAddress() {
         return address;
     }
+
+    public void setAddress(Address address) { this.address = address; }
 }

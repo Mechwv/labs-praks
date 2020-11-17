@@ -2,6 +2,7 @@ package Lab16;
 
 public interface Order {
     boolean add(MenuItem item);
+    String getType();
     String[] itemsNames();
     int itemsQuantity();
     int itemQuantity(String itemName);

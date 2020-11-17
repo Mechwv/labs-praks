@@ -8,6 +8,10 @@ public class InternetOrder implements Order{
     private ListNode tail = null;
     private Customer customer;
 
+    public String getType() {
+        return "INTERNET";
+    }
+
     public InternetOrder(MenuItem[] items) {
         for (MenuItem item : items)
             add(item);
@@ -80,31 +84,28 @@ public class InternetOrder implements Order{
     @Override
     public boolean remove(String itemName) {
         if (tail == null) {
-            if (head.getValue() != null && head.getValue().getName().equals(itemName)) {
-                head.setValue(null);
+            if (head != null && head.getValue() != null && head.getValue().getName().equals(itemName)) {
+                head = null;
+                size = 0;
                 return true;
             }
             return false;
         }
-        ListNode buf = tail;
-        ListNode buf1 = tail;
-        while (buf != null) {
-            if (buf.getValue().getName().equals(itemName)) {
-                if (buf == tail){
+        ListNode currNode = tail;
+        ListNode prevNode = null;
+        while (currNode != null) {
+            if (currNode.getValue().getName().equals(itemName)) {
+                if (prevNode != null)
+                    prevNode.setNext(currNode.getNext());
+                else if (size == 2)
                     tail = null;
-                    return true;
-                }
-                if (buf == head){
-                    buf1.setValue(buf.getValue());
-                    buf1.setNext(null);
-                    head = buf1;
-                    return true;
-                }
-                buf1.setNext(buf.getNext());
+                else
+                    tail = tail.getNext();
+                size--;
                 return true;
             }
-            buf1 = buf;
-            buf = buf.getNext();
+            prevNode = currNode;
+            currNode = currNode.getNext();
         }
         return false;
     }
@@ -167,12 +168,8 @@ public class InternetOrder implements Order{
     }
 
     public static void main(String[] args) {
-        MenuItem[] items = new MenuItem[5];
+        MenuItem[] items = new MenuItem[1];
         MenuItem buf = new MenuItem(100,"Vodka", "оп и в стельку");
-        items[0] = buf;
-        items[2] = buf;
-        items[3] = buf;
-        items[4] = buf;
         buf = new MenuItem(200,"Djin", "я колдун");
         items[1] = buf;
         InternetOrder order = new InternetOrder(items);
