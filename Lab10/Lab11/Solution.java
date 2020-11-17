@@ -29,11 +29,13 @@ public class Solution {
 
     public static void katalog() {
         File dir = new File("Lab10/katalog");
+        ArrayList<String> files = new ArrayList<>();
         if (dir.isDirectory()) {
             int cnt = 0;
             for (File item : dir.listFiles()) {
-                if (cnt == 5) break;
-                System.out.println(item.getName());
+                if (cnt < 5)
+                    System.out.println(item.getName());
+                files.add(item.getName());
                 cnt++;
             }
         }
